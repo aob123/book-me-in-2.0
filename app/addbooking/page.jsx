@@ -5,10 +5,7 @@ const AddBooking = () => {
     <main>
       <h1>AddBooking</h1>
       <section>
-        <form action="">
-          <label htmlFor="Name">Name</label>
-          <input type="text" name="Name" id="" />
-        </form>
+        <h1></h1>
       </section>
     </main>
   );

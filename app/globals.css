@@ -2,20 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+nav {
+  background-color: rgb(27, 27, 27);
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  color: white;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+nav > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+nav > a > img {
+  margin-right: 10px;
+  width: auto;
+  height: auto;
+}
+
+main {
+  padding: 50px;
+  width: 100vw;
+  min-height: 92vh;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+main > h1 {
+  font-weight: 800;
+}
+
+.categoryButton {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.categoryButton > h1 {
+  width: 200px;
+}
+
+.timeBar {
+  width: 70vw;
+  height: 2vh;
+  background-color: rgb(0, 255, 47);
+}
+
+.navButtonContainer {
+  /* background-color: red; */
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navButton {
+  background-color: black;
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px outset white;
+  border-radius: 12px;
 }

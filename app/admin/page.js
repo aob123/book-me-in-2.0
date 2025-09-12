@@ -1,21 +1,21 @@
 import React from "react";
-import Category from "./(models)/Category";
+import Category from "../(models)/Category";
 import CategoryButton from "./viewbookings/components/CategoryButton";
-import NavButton from "./components/NavButton";
+import NavButton from "../components/NavButton";
 
 const Dashboard = async () => {
   const links = [
     {
       name: "View Bookings",
-      path: "/viewbookings",
+      path: "admin/viewbookings",
     },
     {
       name: "Add Booking",
-      path: "/addbooking",
+      path: "admin/addbooking",
     },
     {
       name: "Settings",
-      path: "/settings",
+      path: "admin/settings",
     },
   ];
 

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 nav {
-  background-color: rgb(27, 27, 27);
+  background-color: rgb(17, 17, 17);
   width: 100vw;
   height: 8vh;
   display: flex;
@@ -17,11 +17,13 @@ nav > a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  font-size: medium;
+  font-family: monospace;
 }
 
 nav > a > img {
   margin-right: 10px;
-  width: auto;
+  width: 15px;
   height: auto;
 }
 
@@ -35,23 +37,6 @@ main {
 
 main > h1 {
   font-weight: 800;
-}
-
-.categoryButton {
-  padding-top: 25px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.categoryButton > h1 {
-  width: 200px;
-}
-
-.timeBar {
-  width: 70vw;
-  height: 2vh;
-  background-color: rgb(0, 255, 47);
 }
 
 .navButtonContainer {

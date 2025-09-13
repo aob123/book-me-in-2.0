@@ -1,6 +1,6 @@
 import React from "react";
 import Category from "../(models)/Category";
-import CategoryButton from "./viewbookings/components/CategoryButton";
+import CategoryButton from "./viewbookings/components/CategoryRow";
 import NavButton from "../components/NavButton";
 
 const Dashboard = async () => {

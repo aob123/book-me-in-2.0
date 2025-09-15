@@ -16,8 +16,11 @@ const Booking = ({ booking }) => {
   // Minutes since opening
   const startMinutes =
     (startDate.getHours() - openingHour) * 60 + startDate.getMinutes();
+
   const endMinutes =
     (endDate.getHours() - openingHour) * 60 + endDate.getMinutes();
+
+  console.log("");
 
   console.log("Start minutes:", startMinutes + 1);
   console.log("End minutes:", endMinutes + 1);
@@ -46,7 +49,9 @@ const Booking = ({ booking }) => {
         handleEditBooking();
       }}
       style={{
-        gridColumn: `${startMinutes + 1} / ${endMinutes + 1}`,
+        gridColumn: `${startMinutes + 1} / ${
+          endMinutes > 540 || endMinutes < 0 ? 540 + 1 : endMinutes + 1
+        }`,
         gridRow: "1",
       }}
     >

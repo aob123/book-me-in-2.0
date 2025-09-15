@@ -34,8 +34,8 @@ const AddBookingForm = () => {
             />
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-half md:w-1/2 px-3 mb-6 md:mb-0">
+        <div class="flex flex-wrap justify-center -mx-3 mb-6">
+          <div class="w-40 px-3 mb-6 md:mb-0">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               for="grid-time"
@@ -53,7 +53,7 @@ const AddBookingForm = () => {
             </p>
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 mb-2">
+        <div class="flex flex-wrap justify-center -mx-3 mb-2">
           <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -82,15 +82,15 @@ const AddBookingForm = () => {
             </div>
           </div>
         </div>
+        <div class="flex items-center justify-center py-2">
+          <button
+            class="flex-shrink-0 bg-purple-500 hover:bg-purple-700 border-purple-500 hover:border-purple-700 text-sm border-4 text-white py-1 px-16 rounded"
+            type="button"
+          >
+            Add
+          </button>
+        </div>
       </form>
-      <div class="flex items-center  py-2">
-        <button
-          class="flex-shrink-0 bg-purple-500 hover:bg-purple-700 border-purple-500 hover:border-purple-700 text-sm border-4 text-white py-1 px-2 rounded"
-          type="button"
-        >
-          Add
-        </button>
-      </div>
     </div>
   );
 };

@@ -13,10 +13,10 @@ const AddBookingModal = ({ isOpen, closeModal, selectedCategory }) => {
       <div className="modal_container">
         <div className="modal_container_header">
           <h1>New Booking - {selectedCategory}</h1>
-          <button onClick={closeModal}>X</button>
+          <button onClick={closeModal}>x</button>
         </div>
         <AddBookingForm />
-        <button onClick={closeModal}>Close</button>
+        {/* <button onClick={closeModal}>Close</button> */}
       </div>
     </div>
   ) : null;

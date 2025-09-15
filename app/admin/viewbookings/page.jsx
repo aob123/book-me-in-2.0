@@ -16,7 +16,7 @@ const getCategories = async () => {
 
 const ViewBookings = async () => {
   const { categories } = await getCategories();
-  let hours = 9;
+  let hours = [15, 16, 17, 18, 19, 20, 21, 22, 23];
   const CreateRows = () => {
     return (
       <>
@@ -31,7 +31,7 @@ const ViewBookings = async () => {
     <main className="viewBookingsMain">
       <section className="viewBookingsGrid">
         {/* <CategoryRow category={{ name: "Time" }} /> */}
-        <TimeHeader hours={hours} />
+        <TimeHeader hours={hours.length} />
         <CreateRows />
       </section>
     </main>

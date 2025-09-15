@@ -14,3 +14,17 @@ export async function POST(req) {
     return NextResponse.json({ message: "Error", error }, { status: 500 });
   }
 }
+
+//GET get bookings
+export async function GET() {
+  try {
+    connectToDatabase();
+    const bookings = await Booking.find();
+    return NextResponse.json({ bookings }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Could not get bookings from database", error },
+      { status: 500 }
+    );
+  }
+}

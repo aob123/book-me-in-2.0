@@ -3,7 +3,6 @@ import Booking from "./Booking";
 
 const TimeHeader = ({}) => {
   let hours = [15, 16, 17, 18, 19, 20, 21, 22, 23];
-  //   let hours = [15, 16];
 
   return (
     <div className="timeHeaderRow">
@@ -12,6 +11,10 @@ const TimeHeader = ({}) => {
         className="timeHeaderGrid"
         style={{ gridTemplateColumns: ` repeat(${hours.length * 60}, 1fr)` }}
       >
+        <div
+          className="timeIndicator"
+          style={{ gridColumn: `1 / ${43}` }}
+        ></div>
         {hours.map(
           (hour, index) => (
             console.log(index + 1),

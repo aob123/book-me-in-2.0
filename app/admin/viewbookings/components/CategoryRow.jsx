@@ -2,7 +2,7 @@
 import Booking from "./Booking";
 import React, { useEffect, useState } from "react";
 
-const CategoryRow = ({ category, hours }) => {
+const CategoryRow = ({ category, hours, openModal }) => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
@@ -37,8 +37,9 @@ const CategoryRow = ({ category, hours }) => {
     }
   }
 
-  const handleAddBooking = () => {
+  const handleAddBooking = (category) => {
     console.log("Add booking to", category.name);
+    openModal(category);
   };
 
   return (
@@ -46,7 +47,7 @@ const CategoryRow = ({ category, hours }) => {
       <h1 className="categoryName">{category.name}</h1>
       <div
         className="categoryTime"
-        onClick={handleAddBooking}
+        onClick={() => handleAddBooking(category.name)}
         style={{
           gridTemplateColumns: ` repeat(${hours.length * 60}, 1fr)`,
           gridTemplateRows: `1fr`,

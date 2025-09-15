@@ -3,6 +3,8 @@ import CategoryRow from "./components/CategoryRow";
 import TimeGrid from "./components/TimeGrid";
 import "./viewbookings.css";
 import TimeHeader from "./components/TimeHeader";
+import AddBookingModal from "./components/AddBookingModal";
+import ClientView from "./components/ClientView";
 
 const getCategories = async () => {
   try {
@@ -16,23 +18,11 @@ const getCategories = async () => {
 
 const ViewBookings = async () => {
   const { categories } = await getCategories();
-  let hours = [15, 16, 17, 18, 19, 20, 21, 22, 23];
-  const CreateRows = () => {
-    return (
-      <>
-        {categories.map((category, i) => (
-          <CategoryRow category={category} hours={hours} key={i++} />
-        ))}
-      </>
-    );
-  };
 
   return (
     <main className="viewBookingsMain">
       <section className="viewBookingsGrid">
-        {/* <CategoryRow category={{ name: "Time" }} /> */}
-        <TimeHeader hours={hours.length} />
-        <CreateRows />
+        <ClientView categories={categories} />
       </section>
     </main>
   );

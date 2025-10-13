@@ -8,7 +8,7 @@ import ClientView from "./components/ClientView";
 
 const getCategories = async () => {
   try {
-    const res = await fetch("http://localhost:3002/api/categories");
+    const res = await fetch("http://localhost:3000/api/categories");
 
     return res.json();
   } catch (error) {

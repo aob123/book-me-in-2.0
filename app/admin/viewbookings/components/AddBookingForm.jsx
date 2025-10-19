@@ -1,6 +1,12 @@
-import React from "react";
+"use client";
+import { set } from "mongoose";
+import React, { useState } from "react";
 
-const AddBookingForm = () => {
+const AddBookingForm = ({ booking }) => {
+  const [players, setPlayers] = useState("");
+
+  console.log("Booking in form:", booking.players[0].name);
+
   return (
     <div className="addBookingForm">
       <form className="w-full max-w-lg">
@@ -8,7 +14,7 @@ const AddBookingForm = () => {
           <div className="w-half md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-first-name"
+              htmlFor="grid-first-name"
             >
               Player 1
             </label>
@@ -17,12 +23,14 @@ const AddBookingForm = () => {
               id="grid-name"
               type="text"
               placeholder="Jane"
+              onChange={(e) => setPlayers(e.target.value)}
+              value={players}
             />
           </div>
           <div className="w-half md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-first-name"
+              htmlFor="grid-first-name"
             >
               Player 2
             </label>
@@ -38,7 +46,7 @@ const AddBookingForm = () => {
           <div className="w-40 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-time"
+              htmlFor="grid-time"
             >
               Time
             </label>
@@ -57,7 +65,7 @@ const AddBookingForm = () => {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-category"
+              htmlFor="grid-category"
             >
               Category
             </label>

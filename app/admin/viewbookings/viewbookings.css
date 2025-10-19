@@ -41,6 +41,7 @@
   overflow: hidden;
   border-radius: 5px;
   cursor: pointer;
+  z-index: 2;
 }
 
 .categoryTime:hover {
@@ -131,8 +132,9 @@
   justify-content: center;
   flex-direction: column;
   font-size: x-small;
-  cursor: pointer;
+  /* cursor: pointer; */
   border: 0.5px inset rgb(22, 3, 37);
+  z-index: 1;
 }
 
 .booking:hover {

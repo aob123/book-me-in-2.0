@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 
-const Booking = ({ booking }) => {
-  console.log("BOOKING COMP", booking);
-
+const Booking = ({ booking, onEdit }) => {
   const openingHour = 15;
   const closingHour = 23;
+
+  // console.log("Rendering booking player name:", booking.players[0].name);
 
   const isoStringStart = booking.start;
   const isoStringEnd = booking.end;
@@ -20,10 +20,10 @@ const Booking = ({ booking }) => {
   const endMinutes =
     (endDate.getHours() - openingHour) * 60 + endDate.getMinutes();
 
-  console.log("");
+  // console.log("");
 
-  console.log("Start minutes:", startMinutes + 1);
-  console.log("End minutes:", endMinutes + 1);
+  // console.log("Start minutes:", startMinutes + 1);
+  // console.log("End minutes:", endMinutes + 1);
 
   // Format as HH:MM in local time
   const startStr = startDate.toLocaleTimeString([], {
@@ -37,16 +37,12 @@ const Booking = ({ booking }) => {
     hour12: false,
   });
 
-  const handleEditBooking = () => {
-    console.log("Edit booking:", booking._id);
-  };
-
   return (
-    <div
+    <button
       className="booking"
       onClick={(e) => {
         e.stopPropagation();
-        handleEditBooking();
+        onEdit(booking);
       }}
       style={{
         gridColumn: `${startMinutes + 1} / ${
@@ -55,11 +51,15 @@ const Booking = ({ booking }) => {
         gridRow: "1",
       }}
     >
-      <p>{booking.name}</p> <br />
+      {/* <p>{booking.name}</p> <br /> */}
+      {booking.players?.map((p, index) => (
+        <p key={index}>{p.name}</p>
+      ))}
+      {/* <p>{booking.name}</p> <br /> */}
       <p>
         {startStr} - {endStr}
       </p>
-    </div>
+    </button>
   );
 };
 

@@ -1,65 +1,25 @@
 "use client";
 import Booking from "./Booking";
 import React, { useEffect, useState } from "react";
+import AddBookingModal from "./AddBookingModal";
 
-const CategoryRow = ({ category, hours, openModal }) => {
-  const [bookings, setBookings] = useState([]);
-
-  useEffect(() => {
-    console.log("CATEGORY ROW MOUNTED");
-    const getBookings = async () => {
-      try {
-        const res = await fetch(`http://localhost:3002/api/bookings`);
-        if (!res.ok) {
-          throw new Error(`Failed to fetch bookings: ${res.status}`);
-        }
-        const data = await res.json();
-        setBookings(data.bookings);
-      } catch (error) {
-        console.log("Failed to get bookings", error);
-      }
-    };
-
-    console.log("Fetching bookings for category:", category.name);
-    getBookings();
-  }, []);
-
-  for (let i = 0; i < bookings.length; i++) {
-    if (category.name === bookings[i].category) {
-      console.log(
-        "MATCH",
-        category.name,
-        bookings[i].category,
-        bookings[i]._id
-      );
-    } else {
-      console.log("NO MATCH", category.name, bookings.category);
-    }
-  }
-
-  const handleAddBooking = (category) => {
-    console.log("Add booking to", category.name);
-    openModal(category);
-  };
-
+const CategoryRow = ({ category, hours, bookings, onAdd, onEdit }) => {
   return (
     <div className="categoryRow">
       <h1 className="categoryName">{category.name}</h1>
       <div
         className="categoryTime"
-        onClick={() => handleAddBooking(category.name)}
+        onClick={onAdd}
         style={{
-          gridTemplateColumns: ` repeat(${hours.length * 60}, 1fr)`,
+          gridTemplateColumns: `repeat(${hours.length * 60}, 1fr)`,
           gridTemplateRows: `1fr`,
         }}
       >
         {bookings
           .filter((booking) => booking.category === category.name)
           .map((booking, id) => (
-            <Booking booking={booking} key={id} />
+            <Booking booking={booking} key={id} onEdit={onEdit} />
           ))}
-
-        {/* <Booking /> */}
       </div>
     </div>
   );

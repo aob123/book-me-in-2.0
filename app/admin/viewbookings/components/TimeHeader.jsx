@@ -15,22 +15,18 @@ const TimeHeader = ({}) => {
           className="timeIndicator"
           style={{ gridColumn: `1 / ${43}` }}
         ></div>
-        {hours.map(
-          (hour, index) => (
-            console.log(index + 1),
-            (
-              <div
-                className="hour"
-                style={{
-                  gridColumn: `${index * 60 + 1} / ${(index + 1) * 60 + 1}`,
-                }}
-                key={index}
-              >
-                <p>{hour}:00</p>
-              </div>
-            )
-          )
-        )}
+        {hours.map((hour, index) => (
+          // console.log(index + 1),
+          <div
+            className="hour"
+            style={{
+              gridColumn: `${index * 60 + 1} / ${(index + 1) * 60 + 1}`,
+            }}
+            key={index}
+          >
+            <p>{hour}:00</p>
+          </div>
+        ))}
       </div>
     </div>
   );

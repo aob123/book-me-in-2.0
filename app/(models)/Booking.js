@@ -2,7 +2,7 @@ import mongoose, { mongo, Schema } from "mongoose";
 
 const bookingSchema = new Schema(
   {
-    name: String,
+    players: [{ name: String }],
     category: String,
     duration: Number,
     start: Date,
